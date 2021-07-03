@@ -1,3 +1,5 @@
+[![Run on Repl.it](https://repl.it/badge/github/dhwanil-ditani/Coursera-ReactJS)](https://repl.it/github/dhwanil-ditani/Coursera-ReactJS)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running on Repl.it
