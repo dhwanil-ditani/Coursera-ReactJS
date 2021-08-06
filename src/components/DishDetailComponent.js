@@ -49,7 +49,7 @@ function RenderComments({ comments }) {
 const DishDetail = (props) => {
     const dish = props.dish;
 
-    // console.log(dish);
+    console.log(dish);
 
     if (dish == null) {
         return <div></div>;
@@ -58,8 +58,8 @@ const DishDetail = (props) => {
     return (
         <div className="container">
             <div className="row">
-                {RenderDish(dish)}
-                {RenderComments(dish.comments)}
+                <RenderDish dish={props.dish} />
+                <RenderComments comments={props.dish.comments} />
             </div>
         </div>
     );

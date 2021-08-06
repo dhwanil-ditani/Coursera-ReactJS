@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Menu from "./MenuComponent";
@@ -29,9 +28,7 @@ class Main extends Component {
                 />
                 <DishDetail
                     dish={
-                        this.state.dishes.filter(
-                            (dish) => dish.id === this.state.selectedDish
-                        )[0]
+                        this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]
                     }
                 />
                 <Footer />
