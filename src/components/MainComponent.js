@@ -83,7 +83,6 @@ class Main extends Component {
                                 <About leaders={this.props.leaders} />
                             )}
                         />
-                        } />
                         <Route
                             exact
                             path="/menu"
