@@ -126,8 +126,7 @@ class CommentForm extends Component {
                     isOpen={this.state.isCommentFormModalOpen}
                     toggle={this.toggleCommentFormModal}>
                     <ModalHeader toggle={this.toggleCommentFormModal}>
-                        {" "}
-                        Submit Comment{" "}
+                        Submit Comment
                     </ModalHeader>
                     <ModalBody>
                         <LocalForm
@@ -169,8 +168,7 @@ class CommentForm extends Component {
                             {/* author */}
                             <Row className='form-group'>
                                 <Label htmlFor='author' md={12}>
-                                    {" "}
-                                    Your Name{" "}
+                                    Your Name
                                 </Label>
                                 <Col md={12}>
                                     <Control.text
