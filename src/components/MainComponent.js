@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { actions } from "react-redux-form";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Menu from "./MenuComponent";
@@ -29,6 +30,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     fetchDishes: () => {
         dispatch(fetchDishes());
+    },
+    resetFeedbackForm: () => {
+        dispatch(actions.reset("feedback"));
     },
 });
 
@@ -107,7 +111,17 @@ class Main extends Component {
                             )}
                         />
                         <Route path="/menu/:dishId" component={DishWithId} />
-                        <Route exact path="/contactus" component={Contact} />
+                        <Route
+                            exact
+                            path="/contactus"
+                            component={() => (
+                                <Contact
+                                    resetFeedbackForm={
+                                        this.props.resetFeedbackForm
+                                    }
+                                />
+                            )}
+                        />
                         <Redirect to="/home" />
                     </Switch>
                 </div>

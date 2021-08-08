@@ -7,7 +7,7 @@ import {
     Col,
     Row,
 } from "reactstrap";
-import { Control, LocalForm, Errors } from "react-redux-form";
+import { Control, Form, Errors, actions } from "react-redux-form";
 import { Link } from "react-router-dom";
 
 const required = (val) => val && val.length;
@@ -52,10 +52,11 @@ class Contact extends Component {
         });
     }
 
-    handleSubmit(event) {
-        console.log("Current State is: " + JSON.stringify(this.state));
-        alert("Current State is: " + JSON.stringify(this.state));
-        event.preventDefault();
+    handleSubmit(values) {
+        console.log("Current State is: " + JSON.stringify(values));
+        alert("Current State is: " + JSON.stringify(values));
+        this.props.resetFeedbackForm();
+        // event.preventDefault();
     }
 
     handleBlur = (field) => (evt) => {
@@ -63,12 +64,6 @@ class Contact extends Component {
             touched: { ...this.state.touched, [field]: true },
         });
     };
-
-    // handleSubmit(values) {
-    //     console.log("Current State is: " + JSON.stringify(values));
-    //     alert("Current State is: " + JSON.stringify(values));
-    //     // event.preventDefault();
-    // }
 
     validate(firstname, lastname, telnum, email) {
         const errors = {
@@ -175,7 +170,8 @@ class Contact extends Component {
                         <h3>Send us your Feedback</h3>
                     </div>
                     <div className="col-12 col-md-9">
-                        <LocalForm
+                        <Form
+                            model="feedback"
                             onSubmit={(values) => this.handleSubmit(values)}
                         >
                             <Row className="form-group">
@@ -345,7 +341,7 @@ class Contact extends Component {
                                     </Button>
                                 </Col>
                             </Row>
-                        </LocalForm>
+                        </Form>
                     </div>
                 </div>
             </div>
